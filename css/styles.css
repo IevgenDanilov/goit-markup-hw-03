@@ -12,31 +12,30 @@ body {
   margin: 0;
   font-family: Roboto, sans-serif;
   background-color: var(--primary-white-color);
-  /* background-color: rgb(182, 127, 127); */
   color: var(--primary-text-color);
   letter-spacing: 0.03em;
+}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
-  ul,
-  ol {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-left: 0;
-  }
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
 
-  img {
-    display: block;
-  }
+img {
+  display: block;
 }
 
 /* Общие правила оформления */
@@ -47,14 +46,12 @@ body {
   padding-right: 15px;
   margin: 0 auto;
 
-
-  outline: 2px solid tomato;
+  /* outline: 2px solid tomato; */
 }
 
 .list {
   list-style: none;
   padding: 0;
-
 }
 
 .unvisible {
@@ -118,9 +115,9 @@ body {
 
 /* Шапка сайта */
 .page-header {
-
+  border-bottom: 1px solid #ececec;
+  padding: 25px 0;
 }
-
 
 .logo {
   color: var(--title-text-color);
@@ -154,24 +151,17 @@ body {
   color: var(--accent-color);
 }
 
-
 .site-nav {
   display: flex;
   margin: auto 0;
-
-
 }
 
 .filter {
   align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 50px 0;
   display: flex;
   flex-direction: reverse;
-
-}
-
-.projects-section {
-  padding: 95px 0;
+  justify-content: center;
 }
 
 .flex {
@@ -179,16 +169,9 @@ body {
   flex-direction: row;
 }
 
-
 .filter .button {
-
   margin-right: 8px;
-  
 }
-
-/* .site-nav .link:active {
-  color: tomato;
-} */
 
 .site-nav .link.current {
   color: var(--accent-color);
@@ -221,10 +204,8 @@ body {
 
 .hero {
   background-color: var(--secondary-background-color);
-  /* height: 600px; */
   padding-bottom: 200px;
   text-align: center;
-  /* margin: 0 auto; */
 }
 
 .hero-title {
@@ -242,7 +223,8 @@ body {
 
 /* Секция */
 
-.section .title {
+.section .title,
+.section-special-first .title {
   color: var(--title-text-color);
   font-size: 14px;
   line-height: 1.14;
@@ -260,6 +242,18 @@ body {
   margin-bottom: 50px;
 }
 
+.section {
+  padding: 94px 0;
+}
+
+.section-special-first {
+  padding: 94px 0 47px 0;
+}
+
+.section-special-second {
+  padding: 47px 0 94px 0;
+}
+
 .profile {
   padding-bottom: 95px;
 }
@@ -272,52 +266,70 @@ body {
   margin: 0;
 }
 
-.employees-item {
-
-  background-color: #fff;
-  margin: 0;
-  padding-bottom: 30px;
-  display: inline-block;
-}
-
 /* Преимущества */
 
 .feature-list .text {
   color: var(--primary-text-color);
   font-size: 14px;
   line-height: 1.71;
-  margin: 0 30px 0 0;
-
 }
 
 .feature-list {
-  margin: 0;
   text-align: left;
-  padding: 95px 0;
+  display: inline-block;
+  display: flex;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.feature-list-item {
+  margin-top: 30px;
+  margin-left: 30px;
+  flex-basis: calc((100% - 120px) / 4);
+  /* width: 270px; */
 }
 
 /* Перечень услуг */
-.services-item {
+.services-list {
+  /* margin: 0; */
   display: inline-block;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
 }
 
-.services-item img {
-margin-right: 10px;
-
+.services-list-item {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc((100% - 90px) / 3);
 }
-
-.services {
-  padding-bottom: 95px;
-}
-
 
 /* Сотрудники */
 .employees {
   background-color: var(--special-background-color);
   text-align: center;
-  padding: 95px 0;
+}
+
+.employees-list {
+  /* margin: 0; */
+  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.employees-item {
+  background-color: #fff;
+  margin: 0;
+  padding-bottom: 30px;
+  display: inline-block;
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc((100% - 120px) / 4);
 }
 
 .employees-item h3 {
@@ -354,12 +366,34 @@ margin-right: 10px;
   line-height: 1.87;
 }
 
-
 .projects {
-
+  display: flex;
   flex-direction: row;
-
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
 }
+
+.projects-item {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc((100% - 90px) / 3);
+  /* align-content: space-between; */
+}
+
+.projects-item-description {
+  border: 1px solid #eeeeee;
+  border-top: none;
+  padding: 20px 25px;
+}
+
+.projects-item-description p,
+h2 {
+  margin: 0;
+}
+/* 
+  Порядок розташування блоку в списку
+  order: 1; */
 
 /* Футер */
 
